@@ -1,9 +1,34 @@
 # CHANGES
 
+## 1.1.4
+
+- Handle default image width/height properly.
+
+## 1.1.3
+
+- Handle `pt` values.
+
+## 1.1.2
+
+- Update path parsing/drawing dependencies to fix arc parsing bug.
+
+## 1.1.1+1
+
+- Fix regression introduced in 1.1.1
+- Update fix for fill/stroke inheritence when currentColor is specified in the
+  SVG but not in the theme.
+
+## 1.1.1
+
+- Fix a bug introduced in 1.1.0 related to fill/stroke inheritence.
+- Explicit dev_dependency on flutter_lints
+- Avoid deprecated API from Flutter.
+
 ## 1.1.0
 
 - Respect stroke* properties when a paint definition is used for a stroke.
 - Respect stroke* properties from groups with no `@stroke` property.
+- Bump package versions.
 
 ## 1.0.3+1
 

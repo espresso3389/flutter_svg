@@ -953,9 +953,6 @@ class DrawableRoot implements DrawableParent {
     if (transform != null) {
       canvas.restore();
     }
-    if (viewport.viewBoxOffset != Offset.zero) {
-      canvas.restore();
-    }
   }
 
   /// Creates a [Picture] from this [DrawableRoot].
@@ -1301,12 +1298,13 @@ class DrawableShape implements DrawableStyleable {
         if (style.dashArray != null &&
             !identical(style.dashArray, DrawableStyle.emptyDashArray)) {
           canvas.drawPath(
-              dashPath(
-                path,
-                dashArray: style.dashArray!,
-                dashOffset: style.dashOffset,
-              ),
-              style.stroke!.toFlutterPaint());
+            dashPath(
+              path,
+              dashArray: style.dashArray!,
+              dashOffset: style.dashOffset,
+            ),
+            style.stroke!.toFlutterPaint(),
+          );
         } else {
           canvas.drawPath(path, style.stroke!.toFlutterPaint());
         }

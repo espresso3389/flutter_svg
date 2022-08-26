@@ -10,7 +10,7 @@ class SvgTheme {
   ///
   /// Defaults the [fontSize] to 14.
   const SvgTheme({
-    this.currentColor,
+    this.currentColor = const Color(0xFF000000),
     this.fontSize = 14,
     double? xHeight,
     this.locale,
@@ -19,7 +19,7 @@ class SvgTheme {
 
   /// The default color applied to SVG elements that inherit the color property.
   /// See: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword
-  final Color? currentColor;
+  final Color currentColor;
 
   /// The font size used when calculating em units of SVG elements.
   /// See: https://www.w3.org/TR/SVG11/coords.html#Units
@@ -56,7 +56,7 @@ class SvgTheme {
 
   @override
   int get hashCode =>
-      hashValues(currentColor, fontSize, xHeight, locale, resolveFontFamily);
+      Object.hash(currentColor, fontSize, xHeight, locale, resolveFontFamily);
 
   @override
   String toString() {
